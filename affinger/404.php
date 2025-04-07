@@ -24,4 +24,5 @@
 	<?php get_sidebar(); ?>
 </div>
 <!-- /#content -->
+ 
 <?php get_footer(); ?>

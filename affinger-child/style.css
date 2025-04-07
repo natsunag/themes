@@ -41,9 +41,9 @@ Version: 20210719
 ---------------------------------------------------------------------------------------------------*/
 @media print, screen and (max-width: 599px) {
 
-	
-	/*-- ここまで --*/
 
+	/*-- ここまで --*/
+}
 /*目次機能実装（20240623）*/
 #origin_toc_container {
     margin-bottom: 30px;
@@ -126,5 +126,4 @@ Version: 20210719
 
 .descr.sitenametop{
 	display: none!important;
-}
 }

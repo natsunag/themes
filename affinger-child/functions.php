@@ -6,7 +6,7 @@ function generate_toc_shortcode() {
     $content = $post->post_content;
 
     // 既に目次が生成されているか確認
-    if (strpos($content, 'id="toc_container_test"') !== false) {
+    if (strpos($content, 'id="toc_container"') !== false) {
         return '';
     }
 

@@ -43,4 +43,88 @@ Version: 20210719
 
 	
 	/*-- ここまで --*/
+
+/*目次機能実装（20240623）*/
+#origin_toc_container {
+    margin-bottom: 30px;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+}
+
+#origin_toc_container .toc_title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 10px 0;
+    background-color: #2589d0;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.1em;
+}
+#origin_toc_container .toc_title::before {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    margin-right: 5px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M8 4H21V6H8V4ZM3 3.5H6V6.5H3V3.5ZM3 10.5H6V13.5H3V10.5ZM3 17.5H6V20.5H3V17.5ZM8 11H21V13H8V11ZM8 18H21V20H8V18Z' fill='%23fff'%3E%3C/path%3E%3C/svg%3E");
+    content: '';
+}
+
+#origin_toc_container .toc_list{
+    margin: 0;
+    overflow: hidden;
+}
+
+#origin_toc_container > .toc_list {
+    padding: 1em 1em 1em 3em;
+}
+
+#origin_toc_container > .toc_list ol{
+	padding: 0;
+	margin-left: 1em;
+}
+
+#origin_toc_container .toc_list .toc_h2{
+	list-style-type: decimal !important;
+	margin-top: 5px;
+    padding-left: 1.1em;
+	padding: 5px 0 0 0;
+    font-weight: 600;
+}
+
+#origin_toc_container .toc_list .toc_h3 {
+	list-style-type: square !important;
+	margin-top: 3px;
+    font-weight: 500;
+    font-size: .9em;
+}
+
+.toc_list a {
+    color: #333;
+    text-decoration: none;
+}
+
+.toc_list a:hover {
+    text-decoration: underline;
+}
+/*目次実装ここまで*/
+@media print, screen and (max-width: 959px) {
+	  #headbox-bg #headbox {
+        padding-top: 0px !important;
+    }
+	  #s-navi dt.trigger .acordion_button{
+        display:none;
+    }
+    #headbox {
+        padding: 0px;
+    }
+	  .s-navi-right header #st-mobile-logo{
+					padding-left: 0px;
+			}
+}
+
+.descr.sitenametop{
+	display: none!important;
+}
 }

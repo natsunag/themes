@@ -6,7 +6,7 @@ function generate_toc_shortcode() {
     $content = $post->post_content;
 
     // 既に目次が生成されているか確認
-    if (strpos($content, 'id="toc_container"') !== false) {
+    if (strpos($content, 'id="origin_toc_container"') !== false) {
         return '';
     }
 
@@ -30,27 +30,26 @@ function generate_toc_shortcode() {
     });
 
     if ($matches) {
-        $toc_output = '<div id="toc_container">
-                        <div class="toc_title">目次</div>
-                        <ul class="toc_list">';
+        $toc_output = '<div id="origin_toc_container">
+                        <div class="toc_title">Contents</div>';
         
         foreach ($matches as $item) {
-            $title = strip_tags($item['match'][1]);
-            $id = sanitize_title_with_dashes($title);
-            $toc_output .= '<li class="toc_' . $item['tag'] . '"><a href="#' . $id . '"><span class="toc_marker">';
-            if ($item['tag'] === 'h2') {
-                $toc_output .= '✔';
-            } elseif ($item['tag'] === 'h3') {
-                $toc_output .= '・';
+            if ($item['tag'] == "h2") {
+                $title = strip_tags($item['match'][1]);
+                $id = sanitize_title_with_dashes($title);
+                $toc_output .= '<ol class="toc_list"><li class="toc_' . $item['tag'] . '"><a href="#' . $id . '">' .$title. '</a></li><ol>';
+                // 元のコンテンツ内の見出しにIDを追加
+                $content = str_replace($item['match'][0], '<' . $item['tag'] . ' id="' . $id . '">' . $title . '</' . $item['tag'] . '>', $content);
+            } if ($item['tag'] == "h3") {
+                $title = strip_tags($item['match'][1]);
+                $id = sanitize_title_with_dashes($title);
+                $toc_output .= '<li class="toc_' . $item['tag'] . '"><a href="#' . $id . '">' .$title. '</a></li>';
+                // 元のコンテンツ内の見出しにIDを追加
+                $content = str_replace($item['match'][0], '<' . $item['tag'] . ' id="' . $id . '">' . $title . '</' . $item['tag'] . '>', $content);
             }
-            $toc_output .= '</span> ' . $title . '</a></li>';
-
-            // 元のコンテンツ内の見出しにIDを追加
-            $content = str_replace($item['match'][0], '<' . $item['tag'] . ' id="' . $id . '">' . $title . '</' . $item['tag'] . '>', $content);
         }
 
-        $toc_output .= '</ul>
-                    </div>';
+        $toc_output .= '</div>';
 
         // 更新されたコンテンツで投稿を更新
         $update_result = wp_update_post(array('ID' => $post->ID, 'post_content' => $content));

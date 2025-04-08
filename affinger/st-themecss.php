@@ -8370,7 +8370,7 @@ endif; ?>
 		<?php elseif ( ! st_has_additional_mobile_menu() // 追加メニューなし
 					  && trim( $GLOBALS['stdata80'] ) === '' && trim( $GLOBALS['stdata479'] ) === '' ): // スマホメニューを表示 + スマホヘッダーに検索アイコンを表示が無効 ?>
 			padding-right: 0;
-			padding-left: 52px;
+			padding-left: 0px;
 		<?php elseif ( ! st_has_additional_mobile_menu() // 追加メニューなし
 					  && trim( $GLOBALS['stdata80'] ) !== '' && trim( $GLOBALS['stdata479'] ) !== '' ): // スマホメニューを表示しない + スマホヘッダーに検索アイコンを表示 ?>
 			padding-right: 52px;

@@ -86,7 +86,6 @@ Version: 20210719
 }
 
 #origin_toc_container .toc_list .toc_h2{
-	list-style-type: decimal !important;
 	margin-top: 5px;
     padding-left: 1.1em;
 	padding: 3px 0 0 0;
@@ -95,8 +94,9 @@ Version: 20210719
 }
 
 #origin_toc_container .toc_list .toc_h3 {
-	list-style-type: square !important;
-	margin-top: 2px;
+	list-style-type: circle!important;
+    margin-left: 15px;
+	margin-top: 5px;
     font-weight: 400;
     font-size: .7em;
 }

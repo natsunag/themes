@@ -17549,7 +17549,7 @@ endif;
         #side aside {
             float: right;
             width: 300px;
-            padding: 0px;
+            padding: 40px 0 0 0;
         }
 
 

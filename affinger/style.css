@@ -10528,7 +10528,7 @@ nav li a:hover {
 	-ms-flex-align: center;
 	align-items: center;
 	cursor: pointer;
-	height: 48px;
+	height: 0px;
 	overflow: hidden;
 }
 

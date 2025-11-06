@@ -17588,7 +17588,7 @@ endif;
             <?php endif; ?>
         }
         #headbox {
-            padding: 5px 10px!important;
+            padding: 20px 10px!important;
         }
     <?php endif; ?>
 

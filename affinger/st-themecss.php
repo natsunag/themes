@@ -17296,6 +17296,7 @@ endif;
 	#footer-in /*フッター*/
 	 {
 		max-width:<?php echo $st_pc_width; ?>px;
+		margin: 0 10%;
 	}
 
 	 /* LPワイド */
@@ -17658,7 +17659,7 @@ endif;
 						endif;
 					echo $st_pc_width;
 					?>px;
-			margin: 0 -20px !important;
+			margin: 0 10% !important;
 		}
 	<?php endif; ?>
 
